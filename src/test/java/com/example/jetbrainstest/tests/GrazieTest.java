@@ -39,5 +39,4 @@ public class GrazieTest extends BaseTest {
         assertEquals("https://www.jetbrains.com/ai/#plans-and-pricing", getDriver().getCurrentUrl(), "Открылась некорректная ссылка");
 
     }
-
 }
