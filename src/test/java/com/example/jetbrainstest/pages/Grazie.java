@@ -1,6 +1,7 @@
 package com.example.jetbrainstest.pages;
 
 import com.example.jetbrainstest.AllureAttachmentsManager;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
@@ -25,6 +26,7 @@ public class Grazie  {
     @FindBy(css = "[href='/ai/#plans-and-pricing']")
     private WebElement tafifButton;
 
+    @Step("Проверка активности кнопки запуска видео")
     public Boolean checkIfPlayVideoButtonIsClickable() {
         LOG.info("Проверка активности кнопки запуска видео");
         return playVideoButton.isEnabled();
@@ -34,7 +36,7 @@ public class Grazie  {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
+    @Step("Перешли на страницу тарифа")
     public void tafifButtonClick() {
         LOG.info("Перешли на страницу тарифа");
         tafifButton.click();
