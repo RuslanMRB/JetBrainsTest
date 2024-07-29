@@ -40,8 +40,8 @@ public class Grazie  {
     }
 
     public void tafifButtonClick() {
-        LOG.info("Перешли на страницу тарифа");
         tafifButton.click();
+        LOG.infoWithScreenshot("Перешли на страницу тарифа");
     }
 
     public void switchToStoreTab(int num) {
