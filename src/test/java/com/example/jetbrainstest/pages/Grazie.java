@@ -1,10 +1,12 @@
 package com.example.jetbrainstest.pages;
 
 import com.example.jetbrainstest.AllureAttachmentsManager;
+import com.example.jetbrainstest.AllureLogger;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.slf4j.Logger;
@@ -16,7 +18,9 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Grazie  {
-    private final Logger LOG = LoggerFactory.getLogger(Grazie.class);
+    private final AllureLogger LOG = new AllureLogger(LoggerFactory.getLogger(Grazie.class));
+
+    // private final Logger LOG = LoggerFactory.getLogger(Grazie.class);
     WebDriver driver;
 
     @FindBy(css = "[aria-label='Play video']")
