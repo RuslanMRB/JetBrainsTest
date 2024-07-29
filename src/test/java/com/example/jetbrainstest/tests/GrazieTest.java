@@ -1,17 +1,20 @@
 package com.example.jetbrainstest.tests;
 
 import com.example.jetbrainstest.AllureAttachmentsManager;
+import com.example.jetbrainstest.MyExtension;
 import com.example.jetbrainstest.pages.AllProductsPage;
 import com.example.jetbrainstest.pages.FleetPage;
 import com.example.jetbrainstest.pages.Grazie;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
 
 import static java.sql.DriverManager.getDriver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+@ExtendWith(MyExtension.class)
 
 public class GrazieTest extends BaseTest {
 
@@ -34,8 +37,8 @@ public class GrazieTest extends BaseTest {
     @Test
     @DisplayName("Проверка перехода на страницу тарифа при покупке")
     public void urlBuyButtonCheck() {
-        Grazie.tafifButtonClick();
-        Grazie.switchToStoreTab(1);
+       Grazie.tafifButtonClick();
+       Grazie.switchToStoreTab(1);
         assertEquals("https://www.jetbrains.com/ai/#plans-and-pricing", getDriver().getCurrentUrl(), "Открылась некорректная ссылка");
 
     }
