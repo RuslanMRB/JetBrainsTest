@@ -41,4 +41,26 @@ public class GrazieTest extends BaseTest {
         assertEquals("https://www.jetbrains.com/ai/#plans-and-pricing", getDriver().getCurrentUrl(), "Открылась некорректная ссылка");
 
     }
+
+
+    @Test
+    @DisplayName("Проверка перевода на немецкий язык")
+    public void changeLanguageCheck() {
+        String buttonText = "Vereinfachen Sie Ihre Aufgaben abseits der Programmierung, indem Sie generative KI-Unterstützung in Ihre JetBrains-IDEs, Ihren Browser und andere Tools integrieren.";
+        assertEquals(buttonText, Grazie.languageButtonAboveClick(), "Перевод не верный");
+    }
+
+    @Test
+    @DisplayName("Проверка перехода на главную страницу")
+    public void mainPageUrlCheck() {
+        Grazie.mainPageButtonClick();
+        assertEquals("https://www.jetbrains.com/", getDriver().getCurrentUrl(), "Открылась неверная сслыка");
+    }
+
+    @Test
+    @DisplayName("Проверка перехода в корзину")
+    public void storeButtonClick() {
+        Grazie.storeButtonClick();
+        assertEquals("https://www.jetbrains.com/store/?section=commercial&billing=yearly", getDriver().getCurrentUrl(), "Открылась неверная сслыка");
+    }
 }
